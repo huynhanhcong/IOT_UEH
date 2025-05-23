@@ -1,0 +1,439 @@
+[
+    {
+        "id": "675d024809693353",
+        "type": "tab",
+        "label": "Flow 2",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "87edfc9c1e2c169e",
+        "type": "mqtt in",
+        "z": "675d024809693353",
+        "name": "Gas",
+        "topic": "sensor/gas",
+        "qos": "0",
+        "datatype": "auto",
+        "broker": "mqtt_broker",
+        "nl": false,
+        "rap": false,
+        "inputs": 0,
+        "x": 350,
+        "y": 120,
+        "wires": [
+            [
+                "19f87fa55c705f25"
+            ]
+        ]
+    },
+    {
+        "id": "19f87fa55c705f25",
+        "type": "ui_gauge",
+        "z": "675d024809693353",
+        "name": "Gas level",
+        "group": "b0d08186a16ae7eb",
+        "order": 1,
+        "width": 3,
+        "height": 2,
+        "gtype": "gage",
+        "title": "Gas",
+        "label": "ppm",
+        "format": "{{value}}",
+        "min": 0,
+        "max": 1023,
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 560,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "c915f753777f2470",
+        "type": "mqtt in",
+        "z": "675d024809693353",
+        "name": "Light",
+        "topic": "sensor/light",
+        "qos": "0",
+        "datatype": "auto",
+        "broker": "mqtt_broker",
+        "inputs": 0,
+        "x": 350,
+        "y": 180,
+        "wires": [
+            [
+                "7b6a6b9a4a486ef3"
+            ]
+        ]
+    },
+    {
+        "id": "7b6a6b9a4a486ef3",
+        "type": "ui_gauge",
+        "z": "675d024809693353",
+        "name": "Light level",
+        "group": "b0d08186a16ae7eb",
+        "order": 2,
+        "width": 3,
+        "height": 2,
+        "gtype": "gage",
+        "title": "Light",
+        "label": "lux",
+        "format": "{{value}}",
+        "min": 0,
+        "max": 1023,
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 560,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "a2ef021ce534198b",
+        "type": "mqtt in",
+        "z": "675d024809693353",
+        "name": "Humidity",
+        "topic": "sensor/humidity",
+        "qos": "0",
+        "datatype": "auto",
+        "broker": "mqtt_broker",
+        "nl": false,
+        "rap": false,
+        "inputs": 0,
+        "x": 350,
+        "y": 240,
+        "wires": [
+            [
+                "4c540888a6d122fb"
+            ]
+        ]
+    },
+    {
+        "id": "4c540888a6d122fb",
+        "type": "ui_gauge",
+        "z": "675d024809693353",
+        "name": "Humidity",
+        "group": "b0d08186a16ae7eb",
+        "order": 3,
+        "width": 3,
+        "height": 2,
+        "gtype": "gage",
+        "title": "Humidity",
+        "label": "%",
+        "format": "{{value}}",
+        "min": 0,
+        "max": 100,
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 560,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "404cfc81bc26b1c5",
+        "type": "mqtt in",
+        "z": "675d024809693353",
+        "name": "Temperature",
+        "topic": "sensor/temp",
+        "qos": "0",
+        "datatype": "auto",
+        "broker": "mqtt_broker",
+        "inputs": 0,
+        "x": 350,
+        "y": 300,
+        "wires": [
+            [
+                "0b43dd69e2e4f151"
+            ]
+        ]
+    },
+    {
+        "id": "0b43dd69e2e4f151",
+        "type": "ui_gauge",
+        "z": "675d024809693353",
+        "name": "Temp",
+        "group": "b0d08186a16ae7eb",
+        "order": 4,
+        "width": 3,
+        "height": 2,
+        "gtype": "gage",
+        "title": "Temperature",
+        "label": "°C",
+        "format": "{{value}}",
+        "min": -10,
+        "max": 50,
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 560,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "ebe79160c2504aeb",
+        "type": "mqtt in",
+        "z": "675d024809693353",
+        "name": "Motion",
+        "topic": "sensor/motion",
+        "qos": "0",
+        "datatype": "auto",
+        "broker": "mqtt_broker",
+        "inputs": 0,
+        "x": 350,
+        "y": 360,
+        "wires": [
+            [
+                "8243b16553d95d03"
+            ]
+        ]
+    },
+    {
+        "id": "8243b16553d95d03",
+        "type": "ui_text",
+        "z": "675d024809693353",
+        "group": "b0d08186a16ae7eb",
+        "order": 5,
+        "width": 3,
+        "height": 1,
+        "name": "Motion Detected?",
+        "label": "Motion",
+        "format": "{{msg.payload == 1 ? 'Yes' : 'No'}}",
+        "layout": "row-spread",
+        "x": 560,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "fb0433495e0a94f3",
+        "type": "mqtt in",
+        "z": "675d024809693353",
+        "name": "Distance",
+        "topic": "sensor/distance",
+        "qos": "0",
+        "datatype": "auto",
+        "broker": "mqtt_broker",
+        "inputs": 0,
+        "x": 350,
+        "y": 420,
+        "wires": [
+            [
+                "4530b289b649c398"
+            ]
+        ]
+    },
+    {
+        "id": "4530b289b649c398",
+        "type": "ui_gauge",
+        "z": "675d024809693353",
+        "name": "Distance",
+        "group": "b0d08186a16ae7eb",
+        "order": 6,
+        "width": 3,
+        "height": 2,
+        "gtype": "gage",
+        "title": "Distance",
+        "label": "cm",
+        "format": "{{value}}",
+        "min": 0,
+        "max": 200,
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 560,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "14e75e7cd990e498",
+        "type": "ui_switch",
+        "z": "675d024809693353",
+        "name": "Red LED",
+        "label": "RED",
+        "group": "9afa843f3b39d6cf",
+        "order": 1,
+        "width": 3,
+        "height": 1,
+        "passthru": true,
+        "topic": "led/red",
+        "style": "",
+        "onvalue": "1",
+        "onvalueType": "num",
+        "offvalue": "0",
+        "offvalueType": "num",
+        "x": 550,
+        "y": 500,
+        "wires": [
+            [
+                "d5017210889053bb"
+            ]
+        ]
+    },
+    {
+        "id": "d1c6ca1819e2fc73",
+        "type": "ui_switch",
+        "z": "675d024809693353",
+        "name": "Green LED",
+        "label": "GREEN",
+        "group": "9afa843f3b39d6cf",
+        "order": 2,
+        "width": 3,
+        "height": 1,
+        "passthru": true,
+        "topic": "led/green",
+        "style": "",
+        "onvalue": "1",
+        "onvalueType": "num",
+        "offvalue": "0",
+        "offvalueType": "num",
+        "x": 550,
+        "y": 540,
+        "wires": [
+            [
+                "69e0097911b0c42a"
+            ]
+        ]
+    },
+    {
+        "id": "456baf9dddad7ecc",
+        "type": "ui_switch",
+        "z": "675d024809693353",
+        "name": "Blue LED",
+        "label": "BLUE",
+        "group": "9afa843f3b39d6cf",
+        "order": 3,
+        "width": 3,
+        "height": 1,
+        "passthru": true,
+        "topic": "led/blue",
+        "style": "",
+        "onvalue": "1",
+        "onvalueType": "num",
+        "offvalue": "0",
+        "offvalueType": "num",
+        "x": 550,
+        "y": 580,
+        "wires": [
+            [
+                "4473c83128b1c975"
+            ]
+        ]
+    },
+    {
+        "id": "d5017210889053bb",
+        "type": "mqtt out",
+        "z": "675d024809693353",
+        "name": "",
+        "topic": "led/red",
+        "qos": "",
+        "retain": "",
+        "broker": "mqtt_broker",
+        "x": 750,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "69e0097911b0c42a",
+        "type": "mqtt out",
+        "z": "675d024809693353",
+        "name": "",
+        "topic": "led/green",
+        "qos": "",
+        "retain": "",
+        "broker": "mqtt_broker",
+        "x": 750,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "4473c83128b1c975",
+        "type": "mqtt out",
+        "z": "675d024809693353",
+        "name": "",
+        "topic": "led/blue",
+        "qos": "",
+        "retain": "",
+        "broker": "mqtt_broker",
+        "x": 750,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "mqtt_broker",
+        "type": "mqtt-broker",
+        "name": "EMQX",
+        "broker": "broker.emqx.io",
+        "port": "1883",
+        "clientid": "node-red-12345",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": "120",
+        "cleansession": false,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "b0d08186a16ae7eb",
+        "type": "ui_group",
+        "name": "Sensors",
+        "tab": "0ed9605db9ed958c",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "9afa843f3b39d6cf",
+        "type": "ui_group",
+        "name": "LED Controls",
+        "tab": "0ed9605db9ed958c",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "0ed9605db9ed958c",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    }
+]
